@@ -50,7 +50,10 @@ namespace Project_QR_BS.Services
             string combinedInfo = $"{request.QRInfo}|{request.Money}";
             byte[] encodedBytes = Encoding.UTF8.GetBytes(combinedInfo);
             int displayResult = mf_genQrCode(30, encodedBytes, encodedBytes.Length);
-            LogQRCodeGeneration(request.Id, request.Money,request.QRInfo);
+
+            // Log the request information including the accountName
+            LogQRCodeGeneration(request.Id, request.Money, request.QRInfo, request.AccountName);
+
             return displayResult == 1 ? ApiResponseStatus.Success : ApiResponseStatus.Failure;
         }
 
@@ -58,7 +61,7 @@ namespace Project_QR_BS.Services
         {
             int statusResult = mf_showText(30, status, status.Length);
             LogPaymentStatus(status);
-            
+
             // Wait for 2 seconds before resetting the POS
             System.Threading.Thread.Sleep(3000);
 
@@ -103,10 +106,11 @@ namespace Project_QR_BS.Services
             string currentDateTime = DateTime.Now.ToString("yyyyMMddHHmmss");
 
             // Call the mf_setDatetime function to check the connection
-            int result = mf_setDatetime(currentDateTime);
+            int result = mf_connect();
 
             // Return success if the result is 0, failure otherwise
-            return result == 0 ? ApiResponseStatus.Success : ApiResponseStatus.Failure;
+
+            return result == 1 ? ApiResponseStatus.Success : ApiResponseStatus.Failure;
         }
 
         private void LogResetAction(int resetResult)
@@ -130,13 +134,14 @@ namespace Project_QR_BS.Services
             AppendLog(logFilePath, $"{GetCurrentTime()} connectionResult={connectionResult}");
         }
 
-        private void LogQRCodeGeneration(string id,string money,string qrInfo)
+        private void LogQRCodeGeneration(string id, string money, string qrInfo, string accountName)
         {
             string logFilePath = GetLogFilePath();
             AppendLog(logFilePath, $"{GetCurrentTime()} ------------genQR------------");
             AppendLog(logFilePath, $"{GetCurrentTime()} id={id}");
             AppendLog(logFilePath, $"{GetCurrentTime()} stringQR={qrInfo}");
             AppendLog(logFilePath, $"{GetCurrentTime()} Money={money}");
+            AppendLog(logFilePath, $"{GetCurrentTime()} AccountName={accountName}");
         }
 
         private void LogPaymentStatus(string status)

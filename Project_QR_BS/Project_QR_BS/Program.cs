@@ -19,7 +19,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
         builder => builder
-            .WithOrigins("chrome-extension://mdklpomdkalacllmhjcgicjdgpidneeh")
+            .WithOrigins("https://oneportal.acbtest.vn")
             .AllowAnyHeader()
             .AllowAnyMethod());
 });
