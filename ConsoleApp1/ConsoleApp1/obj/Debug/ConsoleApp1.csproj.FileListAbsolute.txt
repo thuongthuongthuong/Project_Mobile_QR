@@ -5,3 +5,10 @@ D:\Học\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.AssemblyReference.
 D:\Học\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
 D:\Học\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 D:\Học\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+D:\Học\Project_Mobile_QR\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+D:\Học\Project_Mobile_QR\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+D:\Học\Project_Mobile_QR\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+D:\Học\Project_Mobile_QR\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.AssemblyReference.cache
+D:\Học\Project_Mobile_QR\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+D:\Học\Project_Mobile_QR\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+D:\Học\Project_Mobile_QR\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

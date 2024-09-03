@@ -20,6 +20,7 @@ namespace ConsoleApp1
         [DllImport("mpos_sdk.dll", EntryPoint = "mf_connect", CallingConvention = CallingConvention.Cdecl)]
         public static extern int mf_connect();
 
+
         [DllImport("mpos_sdk.dll", EntryPoint = "mf_readPosInfo", CallingConvention = CallingConvention.Cdecl)]
         public static extern int mf_readPosInfo(IntPtr posInfo);
 
@@ -417,6 +418,7 @@ namespace ConsoleApp1
             Console.WriteLine("============SetDatetime================");
             string dateTime = DateTime.Now.ToString("yyyyMMddHHmmss");
             int ret = mf_setDatetime(dateTime);
+            Console.WriteLine(ret);
         }
 
         private static void showText()
